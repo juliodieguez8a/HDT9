@@ -74,7 +74,10 @@ class WordTypeCounter {
 					wordParts = line.split("\\.");  // lo que esta entre comillas es una expresión regular.
 					if(wordParts.length == 2)
 					{
-						words.add(new Word(wordParts[0].trim(),wordParts[1].trim()));
+						
+						String palabra=wordParts[0].trim();
+						String tipo=wordParts[1].trim();
+						words.add(new Word(palabra, tipo));
 					}
 					line = wordreader.readLine();
 				}
@@ -99,7 +102,7 @@ class WordTypeCounter {
 					for(int i=0;i<textParts.length;i++)
 					{
 						lookupword.setWord(textParts[i].trim().toLowerCase());
-						currentword = words.get(lookupword);
+						currentword = words.getx(lookupword);
 						if(currentword != null)
 						{
 							if(currentword.getType().equals("v-d") || currentword.getType().equals("v") || currentword.getType().equals("q"))

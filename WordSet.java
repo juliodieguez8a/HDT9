@@ -9,6 +9,6 @@ Descripción: WordSet. Interfaz para las implementaciones de clases que almacenar
 public interface WordSet {
 
 	public void add(Word wordObject);
-	public Word get(Word word);
+	public Word getx(Word word);
 	
 }

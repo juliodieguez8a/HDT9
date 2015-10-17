@@ -17,7 +17,7 @@ class SimpleSet implements WordSet
 		base = new ArrayList<Word>();
 	}
 	
-	public Word get(Word word)
+	public Word getx(Word word)
 	{
 		int index = base.indexOf(word);
 		if(index == -1) return null;
