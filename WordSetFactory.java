@@ -21,6 +21,8 @@ class WordSetFactory {
 		    return new SimpleSet();
 	    //if (tipo == 2)
 	    //	return new RedBlackBST();
+	    if (tipo == 3)
+	    	return new SplayTree();
 		else
 		    // aqui se regresara el set empleando sus implementaciones:
 			// if tipo == 2 cree una instancia para un Wordset implementao con Red Black Tree

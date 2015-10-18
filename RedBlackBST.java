@@ -1,4 +1,4 @@
-import java.util.NoSuchElementException;
+/*import java.util.NoSuchElementException;
 
 public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
 
@@ -23,9 +23,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         }
     }
 
-    /**
+    *//**
      * Initializes an empty symbol table.
-     */
+     *//*
     public RedBlackBST() {
     }
 
@@ -41,9 +41,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
 	}
 	
 	
-   /***************************************************************************
+   *//***************************************************************************
     *  Node helper methods.
-    ***************************************************************************/
+    ***************************************************************************//*
     // is node x red; false if x is null ?
     private boolean isRed(Node x) {
         if (x == null) return false;
@@ -57,34 +57,34 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
     } 
 
 
-    /**
+    *//**
      * Returns the number of key-value pairs in this symbol table.
      * @return the number of key-value pairs in this symbol table
-     */
+     *//*
     public int size() {
         return size(root);
     }
 
-   /**
+   *//**
      * Is this symbol table empty?
      * @return <tt>true</tt> if this symbol table is empty and <tt>false</tt> otherwise
-     */
+     *//*
     public boolean isEmpty() {
         return root == null;
     }
 
 
-   /***************************************************************************
+   *//***************************************************************************
     *  Standard BST search.
-    ***************************************************************************/
+    ***************************************************************************//*
 
-    /**
+    *//**
      * Returns the value associated with the given key.
      * @param key the key
      * @return the value associated with the given key if the key is in the symbol table
      *     and <tt>null</tt> if the key is not in the symbol table
      * @throws NullPointerException if <tt>key</tt> is <tt>null</tt>
-     */
+     *//*
     public Value get(Key key) {
         return get(root, key);
     }
@@ -100,29 +100,29 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         return null;
     }
 
-    /**
+    *//**
      * Does this symbol table contain the given key?
      * @param key the key
      * @return <tt>true</tt> if this symbol table contains <tt>key</tt> and
      *     <tt>false</tt> otherwise
      * @throws NullPointerException if <tt>key</tt> is <tt>null</tt>
-     */
+     *//*
     public boolean contains(Key key) {
         return get(key) != null;
     }
 
-   /***************************************************************************
+   *//***************************************************************************
     *  Red-black tree insertion.
-    ***************************************************************************/
+    ***************************************************************************//*
 
-    /**
+    *//**
      * Inserts the key-value pair into the symbol table, overwriting the old value
      * with the new value if the key is already in the symbol table.
      * If the value is <tt>null</tt>, this effectively deletes the key from the symbol table.
      * @param key the key
      * @param val the value
      * @throws NullPointerException if <tt>key</tt> is <tt>null</tt>
-     */
+     *//*
     public void put(Key key, Value val) {
         root = put(root, key, val);
         root.color = BLACK;
@@ -147,14 +147,14 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         return h;
     }
 
-   /***************************************************************************
+   *//***************************************************************************
     *  Red-black tree deletion.
-    ***************************************************************************/
+    ***************************************************************************//*
 
-    /**
+    *//**
      * Removes the smallest key and associated value from the symbol table.
      * @throws NoSuchElementException if the symbol table is empty
-     */
+     *//*
     public void deleteMin() {
         if (isEmpty()) throw new NoSuchElementException("BST underflow");
 
@@ -180,10 +180,10 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
     }
 
 
-    /**
+    *//**
      * Removes the largest key and associated value from the symbol table.
      * @throws NoSuchElementException if the symbol table is empty
-     */
+     *//*
     public void deleteMax() {
         if (isEmpty()) throw new NoSuchElementException("BST underflow");
 
@@ -212,12 +212,12 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         return balance(h);
     }
 
-    /**
+    *//**
      * Removes the key and associated value from the symbol table
      * (if the key is in the symbol table).
      * @param key the key
      * @throws NullPointerException if <tt>key</tt> is <tt>null</tt>
-     */
+     *//*
     public void delete(Key key) { 
         if (!contains(key)) {
             System.err.println("symbol table does not contain " + key);
@@ -262,9 +262,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         return balance(h);
     }
 
-   /***************************************************************************
+   *//***************************************************************************
     *  Red-black tree helper functions.
-    ***************************************************************************/
+    ***************************************************************************//*
 
     // make a left-leaning link lean to the right
     private Node rotateRight(Node h) {
@@ -344,14 +344,14 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
     }
 
 
-   /***************************************************************************
+   *//***************************************************************************
     *  Utility functions.
-    ***************************************************************************/
+    ***************************************************************************//*
 
-    /**
+    *//**
      * Returns the height of the BST (for debugging).
      * @return the height of the BST (a 1-node tree has height 0)
-     */
+     *//*
     public int height() {
         return height(root);
     }
@@ -360,15 +360,15 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         return 1 + Math.max(height(x.left), height(x.right));
     }
 
-   /***************************************************************************
+   *//***************************************************************************
     *  Ordered symbol table methods.
-    ***************************************************************************/
+    ***************************************************************************//*
 
-    /**
+    *//**
      * Returns the smallest key in the symbol table.
      * @return the smallest key in the symbol table
      * @throws NoSuchElementException if the symbol table is empty
-     */
+     *//*
     public Key min() {
         if (isEmpty()) throw new NoSuchElementException("called min() with empty symbol table");
         return min(root).key;
@@ -381,11 +381,11 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         else                return min(x.left); 
     } 
 
-    /**
+    *//**
      * Returns the largest key in the symbol table.
      * @return the largest key in the symbol table
      * @throws NoSuchElementException if the symbol table is empty
-     */
+     *//*
     public Key max() {
         if (isEmpty()) throw new NoSuchElementException("called max() with empty symbol table");
         return max(root).key;
@@ -399,13 +399,13 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
     } 
 
 
-    /**
+    *//**
      * Returns the largest key in the symbol table less than or equal to <tt>key</tt>.
      * @param key the key
      * @return the largest key in the symbol table less than or equal to <tt>key</tt>
      * @throws NoSuchElementException if there is no such key
      * @throws NullPointerException if <tt>key</tt> is <tt>null</tt>
-     */
+     *//*
     public Key floor(Key key) {
         if (isEmpty()) throw new NoSuchElementException("called floor() with empty symbol table");
         Node x = floor(root, key);
@@ -424,13 +424,13 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         else           return x;
     }
 
-    /**
+    *//**
      * Returns the smallest key in the symbol table greater than or equal to <tt>key</tt>.
      * @param key the key
      * @return the smallest key in the symbol table greater than or equal to <tt>key</tt>
      * @throws NoSuchElementException if there is no such key
      * @throws NullPointerException if <tt>key</tt> is <tt>null</tt>
-     */
+     *//*
     public Key ceiling(Key key) {  
         if (isEmpty()) throw new NoSuchElementException("called ceiling() with empty symbol table");
         Node x = ceiling(root, key);
@@ -449,13 +449,13 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         else           return x;
     }
 
-    /**
+    *//**
      * Return the kth smallest key in the symbol table.
      * @param k the order statistic
      * @return the kth smallest key in the symbol table
      * @throws IllegalArgumentException unless <tt>k</tt> is between 0 and
      *     <em>N</em> &minus; 1
-     */
+     *//*
     public Key select(int k) {
         if (k < 0 || k >= size()) throw new IllegalArgumentException();
         Node x = select(root, k);
@@ -472,12 +472,12 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         else            return x; 
     } 
 
-    /**
+    *//**
      * Return the number of keys in the symbol table strictly less than <tt>key</tt>.
      * @param key the key
      * @return the number of keys in the symbol table strictly less than <tt>key</tt>
      * @throws NullPointerException if <tt>key</tt> is <tt>null</tt>
-     */
+     *//*
     public int rank(Key key) {
         return rank(key, root);
     } 
@@ -491,28 +491,28 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         else              return size(x.left); 
     } 
 
-   /***************************************************************************
+   *//***************************************************************************
     *  Range count and range search.
-    ***************************************************************************/
+    ***************************************************************************//*
 
-    /**
+    *//**
      * Returns all keys in the symbol table as an <tt>Iterable</tt>.
      * To iterate over all of the keys in the symbol table named <tt>st</tt>,
      * use the foreach notation: <tt>for (Key key : st.keys())</tt>.
      * @return all keys in the sybol table as an <tt>Iterable</tt>
-     */
+     *//*
     public Iterable<Key> keys() {
         return keys(min(), max());
     }
 
-    /**
+    *//**
      * Returns all keys in the symbol table in the given range,
      * as an <tt>Iterable</tt>.
      * @return all keys in the sybol table between <tt>lo</tt> 
      *    (inclusive) and <tt>hi</tt> (exclusive) as an <tt>Iterable</tt>
      * @throws NullPointerException if either <tt>lo</tt> or <tt>hi</tt>
      *    is <tt>null</tt>
-     */
+     *//*
     public Iterable<Key> keys(Key lo, Key hi) {
         Queue<Key> queue = new Queue<Key>();
         // if (isEmpty() || lo.compareTo(hi) > 0) return queue;
@@ -531,13 +531,13 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
         if (cmphi > 0) keys(x.right, queue, lo, hi); 
     } 
 
-    /**
+    *//**
      * Returns the number of keys in the symbol table in the given range.
      * @return the number of keys in the sybol table between <tt>lo</tt> 
      *    (inclusive) and <tt>hi</tt> (exclusive)
      * @throws NullPointerException if either <tt>lo</tt> or <tt>hi</tt>
      *    is <tt>null</tt>
-     */
+     *//*
     public int size(Key lo, Key hi) {
         if (lo.compareTo(hi) > 0) return 0;
         if (contains(hi)) return rank(hi) - rank(lo) + 1;
@@ -545,9 +545,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
     }
 
 
-   /***************************************************************************
+   *//***************************************************************************
     *  Check integrity of red-black tree data structure.
-    ***************************************************************************/
+    ***************************************************************************//*
     private boolean check() {
         if (!isBST())            StdOut.println("Not in symmetric order");
         if (!isSizeConsistent()) StdOut.println("Subtree counts not consistent");
@@ -620,3 +620,4 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements WordSet{
     } 
 
 }
+*/
